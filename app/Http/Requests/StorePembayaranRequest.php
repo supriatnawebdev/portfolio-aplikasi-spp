@@ -13,7 +13,7 @@ class StorePembayaranRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class StorePembayaranRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'tanggal_bayar' => 'required|date',
+            'jumlah_dibayar' => 'required|numeric',
+            'tagihan_id' => 'required',
+            'siswa_id' => 'required'
         ];
     }
+
+    protected function prepareForValidation()
+    {
+        // validasi titik
+        $this->merge([
+            'jumlah_dibayar' => str_replace('.', '', $this->jumlah_dibayar),
+        ]);
+    }
+
+
 }

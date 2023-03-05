@@ -1,10 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SppController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\TagihanController;
 use App\Http\Controllers\AuthSiswaController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\AdminBerandaController;
 use App\Http\Controllers\BerandaSiswaController;
 use App\Http\Controllers\DataSiswa\DataSiswaController;
@@ -36,6 +39,8 @@ Route::prefix('administrator')->group(function () {
     Route::resource('user', UserController::class);
     Route::resource('siswas', SiswaController::class);
     Route::resource('spp', SppController::class);
+    Route::resource('tagihan', TagihanController::class);
+    Route::resource('pembayaran', PembayaranController::class);
 });
 
 Route::get('/siswa', [AuthSiswaController::class, 'showForm'])->name('show.login');

@@ -13,7 +13,8 @@ class StoreTagihanRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        // set true
+        return true;
     }
 
     /**
@@ -24,7 +25,13 @@ class StoreTagihanRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            // biaya_id harus dikasih bintang (.*) Soalnya array!
+            'spp_id.*' => 'required',
+            'angkatan' => 'nullable',
+            'kelas' => 'nullable',
+            'tanggal_tagihan' => 'required|date',
+            'tanggal_jatuh_tempo' => 'required|date',
+            'keterangan' => 'nullable|string'
         ];
     }
 }

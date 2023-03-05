@@ -65,8 +65,8 @@ class SppController extends Controller
 
         Model::create($request->validated());
         // dd($requestData);
-        flash('Data berhasil disimpan');
-        return back();
+        flash('Data berhasil diupdate');
+        return redirect()->route('spp.index');
     }
 
     /**

@@ -79,12 +79,25 @@
             <li class="nav-item {{ \Route::is('spp.*') ? 'active' : '' }}">
                 <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="true" aria-controls="collapseFour">
-                    <i class="fas fa-credit-card"></i>
+                    <i class="fas fa-credit-card fa-2x"></i>
                     <span>Data SPP</span>
                 </a>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item {{ \Route::is('spp.index') ? 'active' : '' }}" href="{{ route('spp.index') }}">Data SPP</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item {{ \Route::is('tagihan.*') ? 'active' : '' }}">
+                <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseFive"
+                    aria-expanded="true" aria-controls="collapseFive">
+                    <i class="fas fa-money-check fa-10x"></i>
+                    <span>Data Tagihan</span>
+                </a>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item {{ \Route::is('tagihan.index') ? 'active' : '' }}" href="{{ route('tagihan.index') }}">Data Tagihan</a>
                     </div>
                 </div>
             </li>
