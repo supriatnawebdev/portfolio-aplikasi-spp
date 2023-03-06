@@ -26,21 +26,21 @@ class Spp extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class,'user_id');
-    }
+    // public function user(): BelongsTo
+    // {
+    //     return $this->belongsTo(User::class,'user_id');
+    // }
 
     // mengambil user_id otomatis dengan event
-    protected static function booted(){
-        static::creating(function($biaya){
+    // protected static function booted(){
+    //     static::creating(function($biaya){
 
-            $biaya->user_id = auth()->user()->id;
-        });
+    //         $biaya->user_id = auth()->user()->id;
+    //     });
 
-        static::updating(function($biaya){
+    //     static::updating(function($biaya){
 
-            $biaya->user_id = auth()->user()->id;
-        });
-    }
+    //         $biaya->user_id = auth()->user()->id;
+    //     });
+    // }
 }

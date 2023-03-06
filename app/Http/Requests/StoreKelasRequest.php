@@ -13,7 +13,7 @@ class StoreKelasRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class StoreKelasRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nama_kelas' => 'required',
+            'kompetensi_keahlian' => 'required',
         ];
     }
+
+    // protected function prepareForValidation()
+    // {
+    //     // validasi titik
+    //     $this->merge([
+    //         'nominal' => str_replace('.', '', $this->nominal),
+    //     ]);
+    // }
 }

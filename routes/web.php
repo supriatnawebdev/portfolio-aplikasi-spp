@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SppController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\TagihanController;
 use App\Http\Controllers\AuthSiswaController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\AdminBerandaController;
 use App\Http\Controllers\BerandaSiswaController;
 use App\Http\Controllers\DataSiswa\DataSiswaController;
+use App\Http\Controllers\DataSiswa\SiswaHistoryPembayaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,9 +43,11 @@ Route::prefix('administrator')->group(function () {
     Route::resource('spp', SppController::class);
     Route::resource('tagihan', TagihanController::class);
     Route::resource('pembayaran', PembayaranController::class);
+    Route::resource('kelas', KelasController::class);
 });
 
 Route::get('/siswa', [AuthSiswaController::class, 'showForm'])->name('show.login');
 Route::post('siswa/login', [AuthSiswaController::class, 'checkLogin'])->name('siswa.login');
 Route::get('/siswa/beranda', [BerandaSiswaController::class, 'index' ])->name('siswa.beranda');
 Route::get('/siswa/dashboard', [DataSiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/pembayaran', [SiswaHistoryPembayaranController::class, 'index'])->name('siswa.pembayaran');

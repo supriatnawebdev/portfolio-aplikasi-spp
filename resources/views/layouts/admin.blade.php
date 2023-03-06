@@ -76,6 +76,18 @@
                     </div>
                 </div>
             </li>
+            <li class="nav-item {{ \Route::is('kelas.*') ? 'active' : '' }}">
+                <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseSix"
+                    aria-expanded="true" aria-controls="collapseSix">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Data Kelas</span>
+                </a>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item {{ \Route::is('kelas.index') ? 'active' : '' }}" href="{{ route('kelas.index') }}">Data Kelas</a>
+                    </div>
+                </div>
+            </li>
             <li class="nav-item {{ \Route::is('spp.*') ? 'active' : '' }}">
                 <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="true" aria-controls="collapseFour">
@@ -157,8 +169,8 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        {{-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> --}}
                     </div>
 
                     <!-- Content Row -->

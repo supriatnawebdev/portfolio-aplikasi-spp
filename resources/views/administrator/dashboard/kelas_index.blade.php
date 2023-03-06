@@ -24,8 +24,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nominal</th>
-                                    <th>Tahun</th>
+                                    <th>Nama Kelas</th>
+                                    <th>Kompetensi Keahlian</th>
                                     <th width="20%">Aksi</th>
                                 </tr>
                             </thead>
@@ -33,8 +33,8 @@
                                 @forelse ($models as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ formatRupiah($item->nominal) }}</td>
-                                        <td>{{ $item->tahun }}</td>
+                                        <td>{{ $item->nama_kelas}}</td>
+                                        <td>{{ $item->kompetensi_keahlian }}</td>
                                         {{-- <td>{{ formatRupiah($item->jumlah, "IDR. ") }}</td> --}}
                                         <td class="">
                                             {!! Form::open([
@@ -43,8 +43,7 @@
                                                 'onsubmit' => 'return confirm("Yakin ingin hapus data ?")',
                                                 ]) !!}
                                                 <a href="{{ route( $routePrefix . '.edit', $item->id) }}" class="btn btn-warning  btn-sm  mr-1">
-                                                    <i class="fas fa-edit"></i>
-                                                    </a>
+                                                    <i class="fas fa-edit"></i></a>
                                                 {{-- <a href="{{ route( $routePrefix . '.show', $item->id) }}" class="btn btn-info  btn-sm">
                                                 <i class="fas fa-eye"></i></a> --}}
                                                 {!! Form::submit('Hapus', ['class' => 'btn btn-danger btn-sm']) !!}
