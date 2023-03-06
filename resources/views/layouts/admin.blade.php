@@ -50,20 +50,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item {{ \Route::is('user.*') ? 'active' : '' }}">
-                <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-user-shield"></i>
-                    <span>Data Petugas</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item {{ \Route::is('user.index') ? 'active' : '' }}" href="{{ route('user.index') }}">Data Petugas</a>
-                        {{-- <a class="collapse-item" href="cards.html">Data</a> --}}
-                    </div>
-                </div>
-            </li>
+
             <li class="nav-item {{ \Route::is('siswas.*') ? 'active' : '' }}">
                 <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseThere"
                     aria-expanded="true" aria-controls="collapseThere">
@@ -113,6 +100,21 @@
                     </div>
                 </div>
             </li>
+
+                  <!-- Nav Item - Pages Collapse Menu -->
+                  <li class="nav-item {{ \Route::is('user.*') ? 'active' : '' }}">
+                    <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Data Petugas</span>
+                    </a>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item {{ \Route::is('user.index') ? 'active' : '' }}" href="{{ route('user.index') }}">Data Petugas</a>
+                            {{-- <a class="collapse-item" href="cards.html">Data</a> --}}
+                        </div>
+                    </div>
+                </li>
 
 
 
