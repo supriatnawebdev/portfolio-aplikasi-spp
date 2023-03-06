@@ -44,6 +44,8 @@ Route::prefix('administrator')->group(function () {
     Route::resource('tagihan', TagihanController::class);
     Route::resource('pembayaran', PembayaranController::class);
     Route::resource('kelas', KelasController::class);
+    Route::post('file-import', [UserController::class, 'fileImport'])->name('file-import');
+    Route::get('file-export', [UserController::class, 'fileExport'])->name('file-export');
 });
 
 Route::get('/siswa', [AuthSiswaController::class, 'showForm'])->name('show.login');
