@@ -123,6 +123,12 @@
                                         </tr>
                                         @endforeach
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="2">Total Pembayaran</td>
+                                            <td>{{formatRupiah($tagihan->pembayaran->sum('jumlah_dibayar'))}}</td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                             <h5 class="mt-2 card-header pt-0">STATUS PEMBAYARAN : {{ strtoupper($tagihan->status) }}</h5>

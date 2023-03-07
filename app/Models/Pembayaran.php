@@ -13,6 +13,10 @@ class Pembayaran extends Model
     protected $guarded = [''];
     protected $dates = ['tanggal_bayar'];
     protected $with = ['user', 'tagihan'];
+    protected $append = ['total_pembayaran'];
+
+
+    // protected function()
 
     /**
      * Get the tagihan that owns the Pembayaran

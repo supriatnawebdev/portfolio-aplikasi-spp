@@ -19,6 +19,18 @@
                     <div class="container text-center py-0 mt-2">
                         @include('flash::message')
                     </div>
+                    <div class="py-2">
+                        <form action="{{ route('import') }}"
+                          method="POST"
+                          enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="file"
+                        class="form-file" required>
+                        <br>
+                        <button class="btn btn-success btn-sm mt-2">
+                              Import Data Siswas
+                        </button>
+                    </div>
                     <div class="table-responsive mt-3">
                         <table class="table table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
                             <thead>

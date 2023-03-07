@@ -8,9 +8,10 @@ use App\Models\Pembayaran;
 use App\Models\TagihanDetail;
 // use App\Traits\HasFormatRupiah;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Tagihan extends Model
 {
@@ -19,6 +20,17 @@ class Tagihan extends Model
     protected $guarded = [];
     protected $dates = ['tanggal_tagihan','tanggal_jatuh_tempo'];
     protected $with = ['user', 'siswa', 'tagihanDetail'];
+    protected $append = ['total_tagihan'];
+
+
+
+    protected function totalTagihan(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => $this->tagihanDetail()->sum('jumlah_biaya'),
+        );
+    }
+
 
     /**
      * Get the user that owns the Tagihan

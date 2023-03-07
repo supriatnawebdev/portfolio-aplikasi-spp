@@ -14,18 +14,17 @@ class SiswaImport implements ToModel
     public function model(array $row)
     {
         return new Siswa([
-            'name'     => $row[0],
-            'username'     => $row[1],
-            'email'     => $row[2],
-            'user_id'     => $row[3],
-            'nisn'     => $row[4],
-            'nis'     => $row[5],
-            'kelas_id'     => $row[6],
-            'alamat'    => $row[7],
-            'no_hp'    => $row[8],
-            'foto'    => $row[9],
-            'password' => Hash::make($row[10]),
-
+            'name' => $row[0],
+            'username' => $row[1],
+            'email' => $row[2],
+            'password' => bcrypt($row[3]),
+            'nisn' => $row[4],
+            'nis' => $row[5],
+            'angkatan' => $row[6],
+            'kelas_id' => $row[7],
+            'user_id' => $row[8],
+            'no_hp' => $row[9],
+            'alamat' => $row[10],
         ]);
     }
 }

@@ -42,7 +42,12 @@ class PembayaranController extends Controller
         $requestData['status_konfirasi'] = 'sudah';
         $requestData['metode_pembayaran'] = 'manual';
         $tagihan = Tagihan::findOrFail($requestData['tagihan_id']);
-        if($requestData['jumlah_dibayar'] >= $tagihan->tagihanDetail->sum('jumlah_biaya')){
+
+
+        $totalDibayar = $tagihan->pembayaran->sum('jumlah_dibayar') + $requestData['jumlah_dibayar'];
+
+
+        if($totalDibayar >= $tagihan->total_tagihan){
             // status pembayaran lunas
             $tagihan->status = 'lunas';
         } else {

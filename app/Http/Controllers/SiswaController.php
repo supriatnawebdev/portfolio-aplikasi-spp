@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Kelas;
+use App\Imports\SiswaImport;
 use Illuminate\Http\Request;
 use \App\Models\Siswa as Model;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreSiswaRequest;
 use App\Http\Requests\UpdateSiswaRequest;
@@ -37,6 +39,30 @@ class SiswaController extends Controller
             'routePrefix' => $this->routePrefix,
             'title' => 'Data siswa'
         ]);
+    }
+
+    public function import(Request $request){
+        $this->validate($request, [
+            'file' => 'required|mimes:csv,xls,xlsx'
+        ]);
+
+        // menangkap file excel
+        $file = $request->file('file');
+
+        // membuat nama file unik
+        $nama_file = rand().$file->getClientOriginalName();
+
+        // upload ke folder file_siswa di dalam folder public
+        $file->move('file_siswa',$nama_file);
+
+        // import data
+        Excel::import(new SiswaImport, public_path('/file_siswa/'.$nama_file));
+
+        // notifikasi dengan session
+        flash('sukses','Data Siswa Berhasil Diimport!');
+
+        // alihkan halaman kembali
+        return redirect('/administrator/siswa');
     }
 
     /**

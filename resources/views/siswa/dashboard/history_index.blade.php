@@ -35,9 +35,17 @@
                                 <td>{{formatRupiah($detail->jumlah_biaya)}}</td>
                             @endforeach
 
+                         <td>
                             @foreach ($item->pembayaran as $pembayaran )
-                                <td>{{formatRupiah($pembayaran->jumlah_dibayar)}}</td>
+                                    <ul>
+                                        <li>
+                                            {{formatRupiah($pembayaran->jumlah_dibayar)}}
+                                        </li>
+                                    </ul>
+
                             @endforeach
+
+                        </td>
 
                             <td>{{ $item->status }}</td>
 
