@@ -16,12 +16,12 @@
                 <div class="py-3">
 
                     <h1 class="text-primary fw-bold">
-                        Welcompe To
+                        Welcome To
                     </h1>
                     <h2>
                         App SPP
                     </h2>
-                    <h5>SMKN BANTARKALONG</h5>
+                    <h5 class="mb-3">SMKN BANTARKALONG</h5>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error assumenda rerum odio qui aliquid pariatur dolorum dignissimos possimus, porro repellendus.</p>
                     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
                         @if (Route::has('login'))
