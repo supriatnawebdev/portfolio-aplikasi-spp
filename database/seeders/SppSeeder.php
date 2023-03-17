@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Spp;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class SppSeeder extends Seeder
 {
@@ -14,6 +15,9 @@ class SppSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Spp::create([
+            'nominal' => 210000,
+            'tahun' => 2023,
+        ]);
     }
 }

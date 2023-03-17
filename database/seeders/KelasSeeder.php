@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Kelas;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class KelasSeeder extends Seeder
 {
@@ -14,6 +15,9 @@ class KelasSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Kelas::create([
+            'nama_kelas' => 'XII RPL 2',
+            'kompetensi_keahlian' => 'RPL',
+        ]);
     }
 }

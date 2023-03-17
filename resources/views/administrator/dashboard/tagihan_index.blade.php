@@ -37,7 +37,7 @@
                                     <th>TANGGAL TAGIHAN</th>
                                     <th>STATUS</th>
                                     <th>TOTAL TAGIHAN</th>
-                                    <th width="20%">Aksi</th>
+                                    <th width="25%">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,6 +67,11 @@
                                                         'tahun' => $item->tanggal_tagihan->format('Y')
                                                          ]) }}" class="btn btn-info  btn-sm">
                                                      <i class="fas fa-eye"></i>
+                                                     @if ($item->status === 'lunas')
+                                                     Lunas
+                                                     @else
+                                                     Bayar Tagihan
+                                                     @endif
                                                     </a>
                                                 {!! Form::submit('Hapus', ['class' => 'btn btn-danger btn-sm']) !!}
                                            {!! Form::close() !!}

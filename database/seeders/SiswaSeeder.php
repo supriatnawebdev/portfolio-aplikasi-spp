@@ -16,18 +16,18 @@ class SiswaSeeder extends Seeder
     public function run()
     {
         Siswa::create([
-            'name' => 'Alfian',
-            'username' => 'Alfin',
-            'email' => 'alfin@gmail.com',
+            'name' => 'Yusup Supriatna',
+            'username' => 'Yusup Supriatna',
+            'email' => 'supriatna.webdeveloper@gmail.com',
             'password' => bcrypt('password'),
             'nisn' => '123456',
             'nis' => '123456',
-            'kelas_id' => '2',
-            'user_id' => '2',
+            'kelas_id' => '1',
+            'user_id' => '1',
             'angkatan' => 2023,
             'no_hp' => '09876500',
             'alamat' => 'Idn',
-            'foto' => 'foto.jpg'
+            'foto' => ''
         ]);
     }
 }

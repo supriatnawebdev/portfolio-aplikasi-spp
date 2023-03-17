@@ -111,7 +111,7 @@ class SiswaController extends Controller
 
         Model::create($requestData);
         flash('Data berhasil disimpan');
-        return back();
+        return redirect()->route('siswa.index');
     }
 
     /**
