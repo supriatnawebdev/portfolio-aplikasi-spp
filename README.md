@@ -1,7 +1,8 @@
 # Requirements
 
+
 Laravel 9
-PHP >= 8
-Npm 9.5.0
+PHP v. >= 8
+Npm v. 9.5.0
 
 
