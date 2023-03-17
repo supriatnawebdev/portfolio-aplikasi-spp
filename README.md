@@ -9,8 +9,14 @@
 - CRUD petugas
 - CRUD kelas
 - CRUD siswa
-- CRUD Spp
-- Authentikasi petugas
+- CRUD spp
+- CRUD tagihan
+- pembayaran 
+
+#Authentikasi 
+
+- Usernme : administrator
+- Password : administrator
 
 #Langkah - langkah instal project
 
