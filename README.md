@@ -25,8 +25,9 @@
 
 #Jalankan project
 
--php artisan serve
--npm run dev
+- php artisan serve
+- npm run dev
+- login or register
 
 
 
