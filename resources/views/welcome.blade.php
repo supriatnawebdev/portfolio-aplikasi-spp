@@ -15,25 +15,25 @@
             <div class="col-6 mt-3">
                 <div class="py-3">
 
-                    <h1 class="text-primary fw-bold">
+                    <h1 class="text-primary fw-bold pb-0 mb-0">
                         Welcome To
                     </h1>
-                    <h2>
-                        App SPP
-                    </h2>
-                    <h5 class="mb-3">SMKN BANTARKALONG</h5>
+                    <h1 class="fw-bold pt-0 mt-0">
+                        App - SPP
+                    </h1>
+                    <h3 class="mb-3 fw-bold">SMKN BANTARKALONG</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error assumenda rerum odio qui aliquid pariatur dolorum dignissimos possimus, porro repellendus.</p>
                     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
                         @if (Route::has('login'))
                             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                                 @auth
-                                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 btn btn-primary ">Home</a>
+                                    <a href="{{ url('/home') }}" class="text-md fw-bold shadow-sm text-gray-700 dark:text-gray-500 btn btn-primary ">Home</a>
                                 @else
-                                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 btn btn-outline-primary px-3 py-1">Log in Admin</a>
+                                    <a href="{{ route('login') }}" class="text-md fw-bold fs-3 shadow-sm text-gray-700 dark:text-gray-500 btn btn-outline-primary px-3 py-2">Log-in </a>
                                     {{-- <a href="{{ route('show.login') }}" class="text-sm text-gray-700 dark:text-gray-500 btn btn-outline-primary px-3 py-1">Log in Siswa</a> --}}
 
                                     @if (Route::has('register'))
-                                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 btn btn-outline-primary px-3 py-1">Register</a>
+                                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 btn btn-outline-primary px-3 fw-bold fs-3 py-2">Register</a>
                                     @endif
                                 @endauth
                             </div>
