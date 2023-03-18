@@ -15,7 +15,7 @@
 
 #Authentikasi 
 
-- Usernme : administrator
+- Usernme : administrator@gmail.com
 - Password : administrator
 
 #Langkah - langkah instal project
