@@ -1,4 +1,4 @@
-# Requirements
+# Requirments
 
 - Laravel 9
 - PHP  >= 8
